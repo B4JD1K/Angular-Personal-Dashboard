@@ -22,14 +22,23 @@
   display: flex; // aby płytki miały tę samą szerokość jak i wysokość
   padding: 18px;
 
-
   i {
     color: #222;
   }
+
+  transition: all 0.1s;
+}
+
+.tab.selected .tab-tile {
+  transform: translateY(-50%);
+  
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 2);
 }
 
 .tab {
   position: relative;
+  text-decoration: none; // usuwa podkreślenie z odnośnika do innej strony (zakładki)
   z-index: 1;
 }
 
@@ -45,13 +54,15 @@
   height: 100%;
   width: 100%;
 
-  transition: all 0.2s;
+  transition: all 0.2s ease-in;
 
   //background: rgba(violet, 0.5);
   border-radius: 10px;
 
-  opacity: 0.6;
+  opacity: 0.4;
 }
+
+// STYLES FOR THE TAB TILE BACKGROUND 'SHAPE' STYLES
 
 .bookmarks-tab .tab-tile::before {
   background: linear-gradient(45deg, #f8ff05, #ef080d);
@@ -66,6 +77,15 @@
 }
 
 .tab-tile:hover::before {
-  transform: scale(1.1);
   opacity: 1;
+  transform: scale(1.1);
 }
+
+.tab.selected .tab-tile::before {
+  opacity: 1;
+  border-radius: 50%;
+  box-shadow: 0 7px 17px rgba(white, 0.7);
+  transform: scale(1.1);
+}
+
+// END OF TAB TILE BACKGROUND 'SHAPE' STYLES
