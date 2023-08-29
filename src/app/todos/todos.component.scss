@@ -1,0 +1,89 @@
+.todos-wrapper {
+  //background-color: wheat;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+
+  background-color: rgba(black, 0.5);
+  border-radius: 25px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+
+  cursor: pointer;
+}
+
+.todo-text {
+  color: rgba(white, 0.7);
+}
+
+.check-box {
+  display: flex;
+  padding: 4px;
+  border: 2px solid rgba(white, 0.35);
+  border-radius: 50%;
+  margin-right: 10px;
+
+  i {
+    font-size: 18px;
+    opacity: 0;
+  }
+}
+
+
+.todo-item:hover {
+  .todo-text {
+    color: rgba(white, 0.9);
+  }
+
+  .check-box {
+    //border-color: transparent;
+    background-color: rgba(white, 0.25);
+  }
+
+  &:not(.completed) {
+    i {
+      opacity: 1;
+      color: greenyellow;
+    }
+  }
+}
+
+.todo-item.completed {
+  .todo-text {
+    color: rgba(greenyellow, 0.6);
+  }
+
+  .check-box {
+    background: rgba(greenyellow, 0.5);
+    border-color: transparent;
+  }
+
+  i {
+    opacity: 1;
+  }
+}
+
+.todo-item.completed:hover {
+  .todo-text {
+    color: rgba(greenyellow, 1);
+  }
+
+  .check-box {
+    background: rgba(greenyellow, 0.5);
+    border-color: transparent;
+  }
+
+  i {
+    opacity: 1;
+    color: greenyellow;
+  }
+}
+
+.todo-text,
+.check-box {
+  transition: 0.12s;
+}
