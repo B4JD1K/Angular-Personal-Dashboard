@@ -19,3 +19,29 @@ iframe {
   flex-wrap: wrap;
 }
 
+.dc {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.widgetLogo--cR2RT {
+  background-image: url('https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png') !important;
+
+  color: white;
+  display: flex;
+  background-size: 34px;
+
+  &:after {
+    text: "Nazwa dc";
+  }
+}
+
+.widgetText {
+  font-size: 20px;
+  justify-content: right;
+  display: flex;
+}
+
+.widgetHeaderCount-tnIy70 {
+}
