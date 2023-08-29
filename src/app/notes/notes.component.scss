@@ -9,32 +9,4 @@
   gap: 10px;
 }
 
-.note-card {
-  background-color: rgba(black, 0.3);
-  color: rgba(white, 0.85);
-
-  padding: 25px;
-
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-
-  &:hover {
-    background-color: rgba(black, 0.4);
-    backdrop-filter: blur(2px);
-    color: white;
-  }
-}
-
-.note-card-title {
-  font-weight: 800;
-  font-size: 24px;
-}
-
-.note-card-content {
-  margin-top: 6px;
-}
-
 
