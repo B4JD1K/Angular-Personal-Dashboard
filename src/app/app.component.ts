@@ -9,21 +9,44 @@ import {animate, query, style, transition, trigger} from "@angular/animations";
   animations: [
     trigger('routeAnim', [
       transition('* => *', [
+        style({
+          position: 'relative',
+        }),
+
+        query(':enter, :leave', [
+          style({
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+          })
+        ], {optional: true}),
+
         query(':enter', [
           style({
-            background: 'wheat',
+            opacity: 0,
+          })
+        ], {optional: true}),
+
+        query(':leave', [
+          style({
             display: 'block',
-            height: '100%',
           }),
-          animate(1000, style({
-            background: '*c',
+          animate(500, style({
+            opacity: 0,
           }))
         ], {optional: true}),
 
-        style({
-          background: 'blue'
-        }),
-        animate(1000),
+        query(':enter', [
+          style({
+            opacity: 0,
+            display: 'block',
+            height: '100%',
+          }),
+          animate(500, style({
+            opacity: 1,
+          }))
+        ], {optional: true}),
       ])
     ])
   ]
