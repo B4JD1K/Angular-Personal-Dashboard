@@ -93,3 +93,33 @@
 }
 
 // END OF TAB TILE BACKGROUND 'SHAPE' STYLES
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+  width: 50%;
+  margin: auto;
+
+  background-color: white;
+
+  transition: all 0.2s;
+
+  // hidden by default
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.tab.selected::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transition-delay: 0.2s;
+}
+
+.tab.selected {
+  outline: none;
+}
