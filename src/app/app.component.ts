@@ -16,7 +16,6 @@ import {animate, group, query, style, transition, trigger} from "@angular/animat
 
         query(':enter, :leave', [
           style({
-            // display: 'block',
             position: 'absolute',
             top: 0,
             left: 0,
@@ -25,24 +24,20 @@ import {animate, group, query, style, transition, trigger} from "@angular/animat
           })
         ], {optional: true}),
 
-        // query(':enter', [
-        // style({opacity: 0,})
-        // ], {optional: true}),
-
         group([
           query(':leave', [
-            animate('300ms ease-in', style({
+            animate('200ms ease-in', style({
               opacity: 0,
-              transform: 'translateX(-80px)',
+              transform: 'translateX(-50px)',
             }))
           ], {optional: true}),
 
           query(':enter', [
             style({
               opacity: 0,
-              transform: 'translateX(80px)',
+              transform: 'translateX(50px)',
             }),
-            animate(300, style({
+            animate('250ms 120ms ease-out', style({
               opacity: 1,
               transform: 'translateX(0px)',
             }))
@@ -57,7 +52,6 @@ import {animate, group, query, style, transition, trigger} from "@angular/animat
 
         query(':enter, :leave', [
           style({
-            // display: 'block',
             position: 'absolute',
             top: 0,
             left: 0,
@@ -66,24 +60,20 @@ import {animate, group, query, style, transition, trigger} from "@angular/animat
           })
         ], {optional: true}),
 
-        // query(':enter', [
-        // style({opacity: 0,})
-        // ], {optional: true}),
-
         group([
           query(':leave', [
             animate('200ms ease-in', style({
               opacity: 0,
-              transform: 'translateX(80px)',
+              transform: 'translateX(50px)',
             }))
           ], {optional: true}),
 
           query(':enter', [
             style({
               opacity: 0,
-              transform: 'translateX(-80px)',
+              transform: 'translateX(-50px)',
             }),
-            animate(300, style({
+            animate('250ms 120ms ease-out', style({
               opacity: 1,
               transform: 'translateX(0px)',
             }))
